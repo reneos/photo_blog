@@ -66,3 +66,6 @@ gem 'cloudinary', '~> 1.12.0'
 
 # Text editor
 gem 'tinymce-rails'
+
+# Users
+gem 'pundit'
