@@ -63,3 +63,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Image support
 gem 'cloudinary', '~> 1.12.0'
+
+# Text editor
+gem 'tinymce-rails'
