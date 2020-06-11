@@ -13,4 +13,8 @@ class PostPolicy < ApplicationPolicy
     new?
   end
 
+  def show?
+    true
+  end
+
 end

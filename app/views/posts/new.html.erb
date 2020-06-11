@@ -1,2 +1,15 @@
-<h1>Posts#new</h1>
-<p>Find me in app/views/posts/new.html.erb</p>
+<%= tinymce_assets %>
+<script type="text/javascript" src="/assets/tinymce.js"></script>
+<div class="row">
+
+  <div class="col">
+    <%= simple_form_for @post do |f| %>
+    <%= f.input :title %>
+    <%= f.input :content, input_html: { class: 'tinymce' } %>
+    <%= tinymce %>
+    <%= f.submit "Post", class: 'btn btn-primary' %>
+  <% end %>
+  </div>
+
+
+</div>
