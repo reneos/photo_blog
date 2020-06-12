@@ -5,12 +5,17 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @post.save
     authorize @post
   end
 
   def show
     @post = Post.find(params[:id])
     authorize @post
+  end
+
+  def upload_image
+    blob = ActiveStorage::Blob.create_after_upload!
   end
 
   def create
