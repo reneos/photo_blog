@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def index
     @posts = policy_scope(Post).published
     @drafts = policy_scope(Post).not_published
@@ -11,7 +10,6 @@ class PostsController < ApplicationController
   end
 
   def upload_image
-    blob = ActiveStorage::Blob.create_after_upload!
   end
 
   def edit
@@ -23,10 +21,21 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     authorize @post
     if @post.update(post_params)
-      redirect_to edit_post_path(@post)
+      if params[:commit] == "Save"
+        redirect_to edit_post_path(@post)
+      else
+        @post.update(published: true)
+        redirect_to post_path(@post)
+      end
     else
       render :edit
     end
+  end
+
+  def publish
+    @post = Post.find(params[:id])
+    @post.update(published: true)
+    redirect_to post_path(@post)
   end
 
   def create

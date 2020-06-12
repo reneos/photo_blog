@@ -33,7 +33,10 @@
     });
     //]]>
     </script>
-    <%= f.submit "Post", class: 'btn btn-primary' %>
+    <%= f.submit "Save", class: 'btn btn-primary' %>
+    <% if !@post.published %>
+      <%= f.submit "Publish", class: 'btn btn-primary' %>
+    <% end %>
   <% end %>
   </div>
 

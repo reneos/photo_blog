@@ -10,7 +10,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def show?
-    true
+    record.user == user || record.published
   end
 
   def edit?
@@ -20,5 +20,4 @@ class PostPolicy < ApplicationPolicy
   def update?
     edit?
   end
-
 end
