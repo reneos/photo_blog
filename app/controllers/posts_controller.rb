@@ -1,12 +1,8 @@
 class PostsController < ApplicationController
-  def index
-    @posts = policy_scope(Post).all
-  end
 
-  def new
-    @post = Post.new
-    @post.save
-    authorize @post
+  def index
+    @posts = policy_scope(Post).published
+    @drafts = policy_scope(Post).not_published
   end
 
   def show
@@ -18,14 +14,26 @@ class PostsController < ApplicationController
     blob = ActiveStorage::Blob.create_after_upload!
   end
 
-  def create
-    @post = Post.new(post_params)
+  def edit
+    @post = Post.find(params[:id])
     authorize @post
-    if @post.save
-      redirect_to post_path(@post)
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    authorize @post
+    if @post.update(post_params)
+      redirect_to edit_post_path(@post)
     else
-      render :new
+      render :edit
     end
+  end
+
+  def create
+    @post = Post.new(title: "Untitled", content: "Content", user: current_user)
+    authorize @post
+    @post.save
+    redirect_to edit_post_path(@post)
   end
 
   private

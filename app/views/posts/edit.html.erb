@@ -20,7 +20,7 @@
         "undo redo | styleselect | bold italic backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | image | link | table | code | help",
         "emoticons | insertdatetime"
       ],
-      images_upload_handler: function(blobInfo, success, failur) {
+      images_upload_handler: function(blobInfo, success, failure) {
         fetch('<%= upload_image_path %>',{
           method: "POST",
           body: JSON.stringify({})
