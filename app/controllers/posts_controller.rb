@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  # skip_before_action :verify_authenticity_token, only: :upload_image
+
   def index
     @posts = policy_scope(Post).published
     @drafts = policy_scope(Post).not_published
@@ -10,6 +12,14 @@ class PostsController < ApplicationController
   end
 
   def upload_image
+    @post = Post.find(params[:id])
+    authorize @post
+    blob = ActiveStorage::Blob.create_after_upload!(
+      io: params[:file],
+      filename: params[:file].original_filename,
+      content_type: params[:file].content_type
+    )
+    render json: { location: url_for(blob) }, content_type:  "text / html"
   end
 
   def edit

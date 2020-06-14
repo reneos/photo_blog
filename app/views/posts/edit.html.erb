@@ -1,38 +1,10 @@
-<%= tinymce_assets %>
-<script type="text/javascript" src="/assets/tinymce.js"></script>
 <div class="row">
 
   <div class="col">
-    <%= simple_form_for @post do |f| %>
+    <%= simple_form_for @post, data: { 'upload_path': upload_image_post_path(@post) } do |f| %>
     <%= f.input :title %>
     <%= f.input :content, input_html: { class: 'tinymce' } %>
-    <script>
-    //<![CDATA[
-    const token = document.querySelector('input[name=authenticity_token]');
-    tinymce.init({
-      selector: '.tinymce',
-      menubar: false,
-      plugins: [
-        "image link table lists searchreplace visualblocks code fullscreen insertdatetime",
-        "media paste help wordcount autolink imagetools emoticons"
-      ],
-      toolbar: [
-        "undo redo | styleselect | bold italic backcolor | alignleft aligncenter alignright | bullist numlist outdent indent | image | link | table | code | help",
-        "emoticons | insertdatetime"
-      ],
-      images_upload_handler: function(blobInfo, success, failure) {
-        fetch('<%= upload_image_path %>',{
-          method: "POST",
-          body: JSON.stringify({})
-        })
-          .then(response => response.json())
-          .then((data) => {
-              console.log(data)
-          });
-      }
-    });
-    //]]>
-    </script>
+
     <%= f.submit "Save", class: 'btn btn-primary' %>
     <% if !@post.published %>
       <%= f.submit "Publish", class: 'btn btn-primary' %>
@@ -42,3 +14,5 @@
 
 
 </div>
+
+

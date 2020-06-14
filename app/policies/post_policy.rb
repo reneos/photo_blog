@@ -20,4 +20,8 @@ class PostPolicy < ApplicationPolicy
   def update?
     edit?
   end
+
+  def upload_image?
+    edit?
+  end
 end
