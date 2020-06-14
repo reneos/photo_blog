@@ -1,6 +1,6 @@
 class PolaroidsController < ApplicationController
   def index
-    @polaroids = policy_scope(Polaroid.all)
+    @polaroids = policy_scope(Polaroid).all
   end
 
   def show

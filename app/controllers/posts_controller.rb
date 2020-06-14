@@ -30,18 +30,17 @@ class PostsController < ApplicationController
       if params[:commit] == "Save"
         redirect_to edit_post_path(@post)
       else
-        @post.update(published: true)
-        redirect_to post_path(@post)
+        publish(@post)
       end
     else
       render :edit
     end
   end
 
-  def publish
-    @post = Post.find(params[:id])
-    @post.update(published: true)
-    redirect_to post_path(@post)
+  def publish(post)
+    post.update(published: true)
+    PolaroidCreator.call(post)
+    redirect_to post_path(post)
   end
 
   def create

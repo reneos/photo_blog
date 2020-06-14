@@ -1,0 +1,9 @@
+<div class="row">
+  <% @polaroids.each do |polaroid| %>
+    <div class="col-12 col-md-4 mt-5">
+      <div class="polaroid">
+        <%= cl_image_tag polaroid.photo.key, alt: "alttext" %>
+      </div>
+    </div>
+  <% end %>
+</div>
