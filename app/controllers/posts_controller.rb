@@ -19,7 +19,9 @@ class PostsController < ApplicationController
       filename: params[:file].original_filename,
       content_type: params[:file].content_type
     )
-    render json: { location: url_for(blob) }, content_type:  "text / html"
+    @post.photos.attach(blob)
+    @post.save
+    render json: { location: url_for(blob) }, content_type: "text / html"
   end
 
   def edit
