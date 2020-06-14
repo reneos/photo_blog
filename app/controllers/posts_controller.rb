@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     authorize @post
     blob = ImageHandler.call(@post, params)
-    render json: { location: url_for(blob) }, content_type: "text / html"
+    render json: { location: blob.service_url }, content_type: "text / html"
   end
 
   def edit
