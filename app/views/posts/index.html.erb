@@ -2,9 +2,24 @@
   <div class="col-12">
     <h1>Posts</h1>
     <% @posts.each do |post| %>
-      <h2><%= post.title %></h2>
-      <div><%= post.content.html_safe %></div>
-      <%= link_to "Edit", edit_post_path(post)  %>
+      <div class="post mb-5">
+
+        <% if post.photos.any? %>
+          <div class="post-header">
+            <h2><%= post.title %></h2>
+            <%= cl_image_tag post.photos.first.key, class:"post-photo-featured" %>
+            <span class="post-date"><%= post.created_at.strftime('%Y-%m-%d') %></span>
+          </div>
+        <% else %>
+          <h2><%= post.title %></h2>
+        <% end %>
+        <% stripped = post.content.gsub(/<\/?[^>]*>/, '').gsub(/\n\n+/, "\n").gsub(/^\n|\n$/, '').gsub('&nbsp;',' ') %>
+       <!--  <div class="post-content mt-3"><%= stripped[0..200] + " [...]" %></div>
+
+        <% if user_signed_in? %>
+          <%= link_to "Edit", edit_post_path(post)  %>
+        <% end %> -->
+      </div>
     <% end %>
     <h1>Drafts</h1>
     <% @drafts.each do |post| %>
