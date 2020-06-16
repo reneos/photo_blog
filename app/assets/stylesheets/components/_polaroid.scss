@@ -1,12 +1,23 @@
 .polaroid {
-
-  padding: 2em 0.5em 4em 0.5em;
-  box-shadow: 5px 5px 0 rgba(0,0,0,.01);
-
+  position: relative;
   img {
     width: 100%;
-    height: 200px;
+    height: 400px;
     object-fit: cover;
     object-position: center;
   }
+  width: 33.33%;
+  &:hover .polaroid-metadata {
+    display: block;
+  }
+}
+
+.polaroid-metadata {
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: none;
 }

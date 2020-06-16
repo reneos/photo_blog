@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PhotoBlog</title>
+    <title>ShutterMushi</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -14,19 +14,11 @@
   <body>
 
     <%= render 'shared/flashes' %>
+    <%= render 'shared/navbar' %>
 
-    <div class="container-fluid main-container">
-      <div class="row">
-        <%= render 'components/sidebar' %>
-        <div class="col-9" id="content">
-          <div class="container">
             <%= yield %>
-          </div>
-        </div>
-      </div>
 
 
-    </div>
 
   </body>
 </html>
