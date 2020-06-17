@@ -19,6 +19,14 @@ body {
   color: $dark-gray;
 }
 
+.full-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
 
 .main-container {
   min-height: 100vh;
@@ -47,7 +55,7 @@ a {
   transition: 200ms;
   position: absolute;
   bottom: 0;
-  height: 200px;
+  height: 300px;
 }
 
 
@@ -56,7 +64,7 @@ a {
   position: relative;
   // background-color: #d4cdc5;
   margin: 2.5em;
-  height: 275px;
+  height: 375px;
   &:hover .post-photo-featured {
     width: 100%;
     margin-left: 0;
@@ -66,6 +74,12 @@ a {
     display: block;
     transition: 200ms;
   }
+}
+
+.col-12:first-child .post-photo-featured {
+  width: 100%;
+  height: 100%;
+  margin-left: 0;
 }
 
 .post-date {
@@ -85,5 +99,9 @@ a {
   }
 }
 
-
+@include media-breakpoint-down(md) {
+  .post-meta h2 {
+    font-size: 4rem;
+  }
+}
 
