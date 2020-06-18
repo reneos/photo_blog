@@ -2,6 +2,8 @@
   height: 100vh;
   position: sticky;
   top: 0;
+  padding: 0;
+  border-right: 1px solid $dark-yellow;
 }
 
 #logo {
@@ -20,7 +22,20 @@
 
 #sidebar .list-group-item {
   background: transparent;
-  padding-left: 0;
+  padding: 0;
   text-transform: uppercase;
   border: 0;
+  transition: 300ms;
+  a {
+    color: $dark-brown;
+    display: block;
+    padding: .25em .75em;
+  }
+}
+
+#sidebar .list-group-item.active, #sidebar .list-group-item:hover {
+  background: white;
+  border-right: 5px solid $dark-yellow;
+  position: relative;
+  width: calc(100% + 5px)
 }
