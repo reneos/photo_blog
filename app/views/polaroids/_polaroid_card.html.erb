@@ -1,3 +1,4 @@
+<%= link_to url_for(polaroid.photo.blob), class: "polaroid-link" do %>
 <div class="polaroid">
   <%= cl_image_tag polaroid.photo.key %>
   <% if polaroid.photo.analyzed? %>
@@ -8,3 +9,4 @@
     </div>
   <% end %>
 </div>
+<% end %>

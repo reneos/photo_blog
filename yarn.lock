@@ -1755,6 +1755,13 @@ chalk@^1.1.1:
     strip-ansi "^3.0.0"
     supports-color "^2.0.0"
 
+chocolat@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/chocolat/-/chocolat-1.0.2.tgz#96899d14fd7c9010a377c09475b8c61804d55942"
+  integrity sha512-P6dalXfMBQEMrG2KafRlvZX55gq/czjUQDM20wv6+/TFz57yEGSNPbeJRBSmDrpEYPUwOqZtw97FSgoYYeGJ2Q==
+  dependencies:
+    es6-promise "^4.2.5"
+
 chokidar@^2.1.8:
   version "2.1.8"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-2.1.8.tgz#804b3a7b6a99358c3c5c61e71d8728f041cff917"
@@ -2665,6 +2672,11 @@ es-to-primitive@^1.2.1:
     is-callable "^1.1.4"
     is-date-object "^1.0.1"
     is-symbol "^1.0.2"
+
+es6-promise@^4.2.5:
+  version "4.2.8"
+  resolved "https://registry.yarnpkg.com/es6-promise/-/es6-promise-4.2.8.tgz#4eb21594c972bc40553d276e510539143db53e0a"
+  integrity sha512-HJDGx5daxeIvxdBxvG2cb9g4tEvwIk3i8+nhX0yGrYmZUzbkdg8QbDevheDB8gd0//uPj4c1EQua8Q+MViT0/w==
 
 escape-html@~1.0.3:
   version "1.0.3"
