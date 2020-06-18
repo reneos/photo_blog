@@ -1,6 +1,6 @@
 <%= link_to url_for(polaroid.photo.blob), class: "polaroid-link" do %>
 <div class="polaroid">
-  <%= cl_image_tag polaroid.photo.key %>
+  <%= cl_image_tag polaroid.photo.key, width: "1000" %>
   <% if polaroid.photo.analyzed? %>
     <div class="polaroid-metadata">
       <ul class="polaroid-metadata-list">
