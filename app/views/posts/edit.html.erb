@@ -1,18 +1,18 @@
-<div class="row">
+<div class="container py-5">
 
-  <div class="col">
-    <%= simple_form_for @post, data: { 'upload_path': upload_image_post_path(@post) } do |f| %>
-    <%= f.input :title %>
-    <%= f.input :content, input_html: { class: 'tinymce' } %>
+  <div class="row">
+    <div class="col">
+      <h1>Create Post</h1>
+      <%= simple_form_for @post, data: { 'upload_path': upload_image_post_path(@post) } do |f| %>
+      <%= f.input :title %>
+      <%= f.input :content, input_html: { class: 'tinymce', rows: 20 } %>
 
-    <%= f.submit "Save", class: 'btn btn-primary' %>
-    <% if !@post.published %>
-      <%= f.submit "Publish", class: 'btn btn-primary' %>
+      <%= f.submit "Save", class: 'btn btn-primary' %>
+      <% if !@post.published %>
+        <%= f.submit "Publish", class: 'btn btn-primary' %>
+      <% end %>
     <% end %>
-  <% end %>
+    </div>
   </div>
 
-
 </div>
-
-

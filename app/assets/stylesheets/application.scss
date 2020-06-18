@@ -12,13 +12,14 @@
 @import "components/index";
 @import "pages/index";
 
+
 h1, h2, h3, h4, h5, h6 {
   font-weight: 200;
 }
 
 
 body {
-  background-color: #e9e4df;
+  background-color: $cream;
   color: $dark-gray;
 }
 

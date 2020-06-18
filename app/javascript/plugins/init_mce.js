@@ -4,6 +4,7 @@ const initMCE = () => {
     tinymce.remove();
     tinymce.init({
       selector: 'textarea',
+      skin: 'shuttermushi',
       menubar: false,
       plugins: "image link table lists searchreplace visualblocks code fullscreen insertdatetime media paste help wordcount autolink imagetools emoticons",
       toolbar: [
