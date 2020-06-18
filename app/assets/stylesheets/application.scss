@@ -12,6 +12,9 @@
 @import "components/index";
 @import "pages/index";
 
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 200;
+}
 
 
 body {
@@ -33,10 +36,6 @@ body {
 }
 
 
-#content {
-  background-color: lighten($dark-gray, 3%);
-}
-
 a {
   color: $dark-yellow;
   &:hover {
@@ -45,63 +44,9 @@ a {
   }
 }
 
-.post-photo-featured {
-  display: block;
-  width: 80%;
-  margin-left: 20%;
-  height: 500px;
-  object-fit: cover;
-  object-position: center;
-  transition: 200ms;
-  position: absolute;
-  bottom: 0;
-  height: 300px;
-}
 
-
-
-.post {
-  position: relative;
-  // background-color: #d4cdc5;
-  margin: 2.5em;
-  height: 375px;
-  &:hover .post-photo-featured {
-    width: 100%;
-    margin-left: 0;
-    height: 100%;
-  }
-  &:hover .post-date {
-    display: block;
-    transition: 200ms;
-  }
-}
-
-.col-12:first-child .post-photo-featured {
-  width: 100%;
-  height: 100%;
-  margin-left: 0;
-}
-
-.post-date {
-  display: none;
-}
-
-.post-meta {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  color: white;
-  h2 {
-    font-size: 5rem;
-    font-weight: 500 !important;
-    text-shadow: 2px 1px 0 #c5c5b1;
-    text-transform: lowercase;
-  }
-}
-
-@include media-breakpoint-down(md) {
-  .post-meta h2 {
-    font-size: 4rem;
-  }
+#content {
+  padding-left: 0;
+  padding-right: 0;
 }
 

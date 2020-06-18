@@ -1,0 +1,34 @@
+#post-page-header {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 30vh;
+  align-items: flex-end;
+  padding-bottom: 0;
+  position: relative;
+  h1 {
+    margin-bottom: 0;
+    position: absolute;
+    bottom: 0;
+    text-transform: uppercase;
+    color: #e9e4df;
+    font-weight: 500;
+    line-height: .70em;
+    font-size: 5rem;
+    text-shadow: 2px 0 0 $dark-brown;
+  }
+}
+
+#post-page-content {
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+    padding: 1em 0;
+  }
+}
+
+#post-page-container {
+  max-width: 800px;
+}
