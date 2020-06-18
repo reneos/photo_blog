@@ -2,7 +2,9 @@
   <%= cl_image_tag polaroid.photo.key %>
   <% if polaroid.photo.analyzed? %>
     <div class="polaroid-metadata">
-      <%= render 'components/metadata', polaroid: polaroid %>
+      <ul class="polaroid-metadata-list">
+        <%= render 'components/metadata', polaroid: polaroid %>
+      </ul>
     </div>
   <% end %>
 </div>

@@ -1,9 +1,9 @@
 <% metadata = polaroid.photo.blob.metadata %>
-<%= "<i class='fas fa-camera-retro'></i> #{metadata['Model']}".html_safe if metadata['Model'] %>
-<%= "<i class='fas fa-eye'></i> #{metadata["LensModel"]}".html_safe if metadata['LensModel'] %>
-<%= "<i class='fas fa-ruler-horizontal'></i> #{metadata["FocalLength"].to_i/100}mm".html_safe if metadata["FocalLength"] %>
-<%= "<i class='fas fa-stopwatch'></i> #{metadata['ExposureTime']}".html_safe if metadata["ExposureTime"] %>
+<%= "<li><i class='fas fa-camera-retro'></i> #{metadata['Model']}</li>".html_safe if metadata['Model'] %>
+<%= "<li><i class='fas fa-eye'></i> #{metadata["LensModel"]}</li>".html_safe if metadata['LensModel'] %>
+<%= "<li><i class='fas fa-ruler-horizontal'></i> #{metadata["FocalLength"].to_i/100}mm</li>".html_safe if metadata["FocalLength"] %>
+<%= "<li><i class='fas fa-stopwatch'></i> #{metadata['ExposureTime']}</li>".html_safe if metadata["ExposureTime"] %>
 <% if metadata['FNumber'] %>
   <% f_stop = metadata['FNumber'].split('/').map(&:to_f).reduce(&:/) %>
-  <%= "\u{1D453} #{f_stop}".html_safe %>
+  <%= "<li><i>\u{1D453}</i> #{f_stop}</li>".html_safe %>
 <% end %>

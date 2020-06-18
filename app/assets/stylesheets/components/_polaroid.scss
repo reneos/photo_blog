@@ -8,16 +8,30 @@
   }
   width: 33.33%;
   &:hover .polaroid-metadata {
-    display: block;
+    // display: flex;
+    opacity: 100%;
   }
 }
 
 .polaroid-metadata {
-  display: flex;
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,.5);
+  color: white;
+  opacity: 0;
+  transition: 200ms;
+}
+
+.polaroid-metadata-list {
+  list-style: none;
+  margin-left: 0;
+  i {
+    margin-right: 16px;
+  }
 }
