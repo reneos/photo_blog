@@ -1,10 +1,13 @@
 import Chocolat from 'chocolat';
 
 const initLightbox = () => {
-  Chocolat(document.querySelectorAll('.polaroid-link'), {
-    loop: true,
-    imageSize: 'contain'
-  });
+  if (document.querySelector('.polaroid-link')){
+    const chocolate = Chocolat(document.querySelectorAll('.polaroid-link'), {
+      container: document.querySelector('body'),
+      loop: true,
+      imageSize: 'contain'
+    });
+  }
 }
 
 export { initLightbox };
