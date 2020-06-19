@@ -1,5 +1,4 @@
 import Chocolat from 'chocolat';
-import 'chocolat/dist/css/chocolat';
 
 const initLightbox = () => {
   Chocolat(document.querySelectorAll('.polaroid-link'), {
