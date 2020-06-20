@@ -24,12 +24,17 @@ module ActiveStorage
           focal_length: 'FocalLength',
           exposure_time: 'ExposureTime',
           f_number: 'FNumber',
-          iso: 'PhotographicSensitivity'
+          iso: 'PhotographicSensitivity',
+          date_taken: 'DateTimeOriginal'
         }
-        attributes.map do |property, value|
-          attributes[property] = exif[value]
-        end
+        attributes[date_taken] = parse_date(attributes[date_taken])
+        attributes.map { |k,v| attributes[k] = exif[v] }
         @blob.update(attributes)
+      end
+
+      def parse_date(date_string)
+        date_string[0..9] = date_string[0..9].gsub(":", "/")
+        DateTime.parse(date_string)
       end
   end
 end
