@@ -69,3 +69,6 @@ gem 'tinymce-rails'
 
 # Authorization
 gem 'pundit'
+
+# Charts
+gem 'chartkick'

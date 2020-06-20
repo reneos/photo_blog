@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_14_075715) do
+ActiveRecord::Schema.define(version: 2020_06_20_074010) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,6 +33,11 @@ ActiveRecord::Schema.define(version: 2020_06_14_075715) do
     t.bigint "byte_size", null: false
     t.string "checksum", null: false
     t.datetime "created_at", null: false
+    t.string "camera"
+    t.string "lens"
+    t.string "focal_length"
+    t.string "exposure_time"
+    t.string "f_number"
     t.index ["key"], name: "index_active_storage_blobs_on_key", unique: true
   end
 
