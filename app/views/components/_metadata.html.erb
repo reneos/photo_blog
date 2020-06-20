@@ -1,9 +1,9 @@
-<% metadata = polaroid.photo.blob.metadata %>
-<%= "<li><i class='fas fa-camera-retro'></i> #{metadata['Model']}</li>".html_safe if metadata['Model'] %>
-<%= "<li><i class='fas fa-eye'></i> #{metadata["LensModel"]}</li>".html_safe if metadata['LensModel'] %>
-<%= "<li><i class='fas fa-ruler-horizontal'></i> #{metadata["FocalLength"].to_i/100}mm</li>".html_safe if metadata["FocalLength"] %>
-<%= "<li><i class='fas fa-stopwatch'></i> #{metadata['ExposureTime']}</li>".html_safe if metadata["ExposureTime"] %>
-<% if metadata['FNumber'] %>
-  <% f_stop = metadata['FNumber'].split('/').map(&:to_f).reduce(&:/) %>
+<% blob = polaroid.photo.blob %>
+<%= "<li><i class='fas fa-camera-retro'></i> #{blob.camera}</li>".html_safe if blob.camera %>
+<%= "<li><i class='fas fa-eye'></i> #{blob.lens}</li>".html_safe if blob.lens %>
+<%= "<li><i class='fas fa-ruler-horizontal'></i> #{blob.focal_length.to_i/100}mm</li>".html_safe if blob.focal_length %>
+<%= "<li><i class='fas fa-stopwatch'></i> #{blob.exposure_time}</li>".html_safe if blob.exposure_time %>
+<% if blob.f_number %>
+  <% f_stop = blob.f_number.split('/').map(&:to_f).reduce(&:/) %>
   <%= "<li><i>\u{1D453}</i> #{f_stop}</li>".html_safe %>
 <% end %>
