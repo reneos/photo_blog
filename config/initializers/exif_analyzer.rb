@@ -23,7 +23,8 @@ module ActiveStorage
           lens: 'LensModel',
           focal_length: 'FocalLength',
           exposure_time: 'ExposureTime',
-          f_number: 'FNumber'
+          f_number: 'FNumber',
+          iso: 'PhotographicSensitivity'
         }
         attributes.map do |property, value|
           attributes[property] = exif[value]

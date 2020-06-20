@@ -3,6 +3,7 @@
 <%= "<li><i class='fas fa-eye'></i> #{blob.lens}</li>".html_safe if blob.lens %>
 <%= "<li><i class='fas fa-ruler-horizontal'></i> #{blob.focal_length.to_i/100}mm</li>".html_safe if blob.focal_length %>
 <%= "<li><i class='fas fa-stopwatch'></i> #{blob.exposure_time}</li>".html_safe if blob.exposure_time %>
+<%= "<li><i class='far fa-lightbulb'></i> ISO #{blob.iso}</li>".html_safe if blob.iso %>
 <% if blob.f_number %>
   <% f_stop = blob.f_number.split('/').map(&:to_f).reduce(&:/) %>
   <%= "<li><i>\u{1D453}</i> #{f_stop}</li>".html_safe %>
