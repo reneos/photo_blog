@@ -72,3 +72,4 @@ gem 'pundit'
 
 # Charts
 gem 'chartkick'
+gem 'groupdate'

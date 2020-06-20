@@ -27,8 +27,8 @@ module ActiveStorage
           iso: 'PhotographicSensitivity',
           date_taken: 'DateTimeOriginal'
         }
-        attributes[date_taken] = parse_date(attributes[date_taken])
         attributes.map { |k,v| attributes[k] = exif[v] }
+        attributes[:date_taken] = parse_date(attributes[:date_taken]) if exif['DateTimeOriginal']
         @blob.update(attributes)
       end
 
