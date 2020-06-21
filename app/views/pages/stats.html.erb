@@ -1,5 +1,11 @@
 <div class="container">
   <div class="row pt-5">
+    <div class="col-12">
+      <h1>Photo Stats</h1>
+      <p>For fun, some stats from the photos that have been uploaded to this blog.</p>
+    </div>
+  </div>
+  <div class="row pt-5">
   <div class="col-12 col-md-6 mb-5">
     <h2 class="text-center">By Camera</h2>
     <%= pie_chart ActiveStorage::Blob.group(:camera).where.not(camera: nil).count %>
