@@ -19,10 +19,10 @@
     <%= render 'shared/flashes' %>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-2 d-flex flex-column justify-content-center" id="sidebar">
+        <div class="col-md-3 col-lg-2 d-flex flex-column justify-content-center" id="sidebar">
           <%= render 'components/sidebar' %>
         </div>
-        <div class="col-10" id="content">
+        <div class="col-12 col-md-9 col-lg-10" id="content">
           <%= yield %>
         </div>
       </div>
