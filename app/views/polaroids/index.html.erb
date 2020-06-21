@@ -1,5 +1,7 @@
-<div class="d-flex flex-wrap gallery">
-  <% @polaroids.each do |polaroid| %>
-      <%= render 'polaroid_card', polaroid: polaroid %>
-  <% end %>
+<div class="container-fluid py-3">
+  <div class="row gallery">
+    <% @polaroids.each do |polaroid| %>
+        <%= render 'polaroid_card', polaroid: polaroid %>
+    <% end %>
+  </div>
 </div>

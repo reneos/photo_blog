@@ -1,5 +1,8 @@
 .polaroid {
   position: relative;
+  background-color: #fffefd;
+  box-shadow: 5px 5px 5px #d2cac273;
+  padding: 1em 1em 5em;
   img {
     width: 100%;
     height: 400px;
@@ -7,7 +10,6 @@
     object-position: center;
   }
   &:hover .polaroid-metadata {
-    // display: flex;
     opacity: 100%;
   }
 }
@@ -38,5 +40,5 @@
 }
 
 .polaroid-link {
-  flex: 1 0 400px;
+  // flex: 1 0 400px;
 }

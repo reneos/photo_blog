@@ -1,4 +1,4 @@
-<%= link_to url_for(polaroid.photo.blob), class: "polaroid-link" do %>
+<%= link_to url_for(polaroid.photo.blob), class: "polaroid-link col-12 col-md-6 col-lg-4 mb-4" do %>
 <div class="polaroid">
   <%= cl_image_tag polaroid.photo.key, width: "1000" %>
   <% if polaroid.photo.analyzed? %>
