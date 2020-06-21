@@ -1,10 +1,54 @@
 .navbar {
+  background-color: $cream;
+  border-left: 10px solid $dark-yellow;
+  border-bottom: 1px solid $dark-yellow;
+  position: sticky;
+  top: 0;
+  z-index: 9999;
+  display: none !important;
+  // border-bottom: 1px dotted $dark-yellow;
 }
 
+.navbar-brand {
+  padding: 0;
+  margin: 0;
+  font-size: 1.25em;
+  color: $dark-brown;
+  text-shadow: none;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+.nav-link {
+  font-family: $monospace-font;
+  font-size: 1.2em;
+  text-transform: lowercase;
+}
 .navbar .navbar-collapse {
   flex-grow: 0;
 }
 
 .navbar .navbar-brand img {
   width: 40px;
+}
+
+@include media-breakpoint-down(sm) {
+  .navbar {
+    display: flex !important;
+  }
+}
+
+.navbar .list-group-item {
+  background: transparent;
+  padding: 0;
+  text-transform: lowercase;
+  border: 0;
+  transition: 300ms;
+  font-family: $monospace-font;
+  font-size: 1.2em;
+  a {
+    color: $dark-brown;
+    display: block;
+    padding: .25em .75em;
+  }
 }

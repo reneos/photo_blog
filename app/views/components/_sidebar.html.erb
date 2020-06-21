@@ -1,18 +1,5 @@
 <div class="d-flex flex-column h-100 justify-content-end">
-  <ul class="list-group">
-    <li class="list-group-item">
-      <%= link_to "All Posts", posts_path %>
-    </li>
-    <li class="list-group-item">
-      <%= link_to "All Photos", polaroids_path %>
-    </li>
-    <li class="list-group-item">
-      <%= link_to "New Post", posts_path, method: :post %>
-    </li>
-    <li class="list-group-item">
-      <%= link_to "Stats", stats_path %>
-    </li>
-  </ul>
+  <%= render 'shared/menu' %>
   <div id="logo-container">
     <h1 id="logo">Shutter Mushi</h1>
   </div>
