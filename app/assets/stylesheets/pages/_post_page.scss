@@ -1,7 +1,6 @@
 #post-page-header {
-  background-attachment: fixed;
-  background-position: center;
   background-repeat: no-repeat;
+  background-position: center center;
   background-size: cover;
   height: 30vh;
   align-items: flex-end;
@@ -13,10 +12,19 @@
     bottom: 0;
     text-transform: uppercase;
     color: #e9e4df;
-    font-weight: 500;
+    font-weight: 800;
     line-height: .70em;
     font-size: 5rem;
-    text-shadow: 2px 0 0 $dark-brown;
+  }
+  &:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgb(0,0,0);
+    background: linear-gradient(0deg, rgba(0,0,0,.4) 0%, rgba(255,255,255,0) 100%);
   }
 }
 
