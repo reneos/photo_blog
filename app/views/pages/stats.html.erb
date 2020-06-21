@@ -1,3 +1,4 @@
 <%= pie_chart ActiveStorage::Blob.group(:camera).count %>
 <%= pie_chart ActiveStorage::Blob.group(:lens).count %>
-
+<%= column_chart ActiveStorage::Blob.group_by_day_of_week(:date_taken, format: '%a').count %>
+<%= column_chart ActiveStorage::Blob.group_by_month(:date_taken, format: '%b').count %>
