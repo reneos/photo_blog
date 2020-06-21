@@ -38,6 +38,7 @@
 
 .post-date {
   display: none;
+  font-family: $monospace-font;
 }
 
 .post-meta {
@@ -46,7 +47,7 @@
   left: 1rem;
   color: white;
   h2 {
-    font-size: 5rem;
+    font-size: 4rem;
     font-weight: 500 !important;
     text-shadow: 2px 1px 0 #c5c5b1;
     text-transform: lowercase;
@@ -55,6 +56,6 @@
 
 @include media-breakpoint-down(md) {
   .post-meta h2 {
-    font-size: 4rem;
+    font-size: 3.5rem;
   }
 }

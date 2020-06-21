@@ -10,9 +10,8 @@
     margin-bottom: 0;
     position: absolute;
     bottom: 0;
-    text-transform: uppercase;
     color: #e9e4df;
-    font-weight: 800;
+    font-weight: 400;
     line-height: .70em;
     font-size: 5rem;
   }
@@ -39,4 +38,8 @@
 
 #post-page-container {
   max-width: 800px;
+}
+
+.post-page-meta {
+  font-family: $monospace-font;
 }
