@@ -13,11 +13,12 @@
   </li>
   <li class="list-group-item dropdown">
     <a class="dropdown-toggle" data-target="#dropdown" href="#" id="navbarDropdown" role="button" data-toggle="collapse" aria-haspopup="true" aria-expanded="false">
-      Dropdown
+      categories
     </a>
     <div class="collapse" id="dropdown" aria-labelledby="navbarDropdown">
-      <a class="dropdown-item" href="#">Action</a>
-      <a class="dropdown-item" href="#">Another action</a>
+      <% Category.all.each do |category| %>
+        <%= link_to category.name, category_path(category), class: "dropdown-item" %>
+      <% end %>
     </div>
   </li>
 </ul>
