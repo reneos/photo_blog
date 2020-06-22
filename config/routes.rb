@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get 'categories/show'
   devise_for :users
   root to: 'pages#home'
   resources :posts, only: [:index, :update, :edit, :create, :show] do

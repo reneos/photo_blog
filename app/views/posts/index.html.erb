@@ -1,4 +1,11 @@
 <div class="container-fluid">
+  <% if @category %>
+    <div class="row pt-5">
+      <div class="col-12">
+        <h1 class="page-title"><%= @category.name %></h1>
+      </div>
+    </div>
+  <% end %>
 
   <div class="row">
       <% @posts.each do |post| %>
