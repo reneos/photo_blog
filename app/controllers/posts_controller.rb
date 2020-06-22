@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  # skip_before_action :verify_authenticity_token, only: :upload_image
+  before_action :set_post, only: [:show, :upload_image, :edit, :update]
 
   def index
     @posts = policy_scope(Post).published
@@ -7,25 +7,22 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
     authorize @post
   end
 
   def upload_image
-    @post = Post.find(params[:id])
     authorize @post
     blob = ImageHandler.call(@post, params)
     render json: { location: blob.service_url }, content_type: "text / html"
   end
 
   def edit
-    @post = Post.find(params[:id])
     @categories = Category.all
     authorize @post
   end
 
   def update
-    @post = Post.find(params[:id])
+    params[:post][:category_id] = create_or_get_category(params[:post][:category_id])
     authorize @post
     if @post.update(post_params)
       if params[:commit] == "Save"
@@ -39,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def publish(post)
-    if params[:post][:category].empty?
+    if params[:post][:category_id].nil? || params[:post][:category_id] == ""
       @categories = Category.all
       flash[:alert] = "Can't publish with empty category"
       render :edit
@@ -60,6 +57,17 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :content)
+    params.require(:post).permit(:title, :content, :category_id)
+  end
+
+  def create_or_get_category(category_name)
+    category_name.strip!
+    return nil if category_name.empty?
+
+    return Category.where(id: category_name).first || Category.create(name: category_name).id
+  end
+
+  def set_post
+    @post = Post.find(params[:id])
   end
 end

@@ -28,6 +28,7 @@ require("channels")
 import "bootstrap";
 import { initMCE } from '../plugins/init_mce';
 import { initLightbox } from '../plugins/init_lightbox';
+import { initSelect2 } from '../plugins/init_select2';
 
 
 // Internal imports, e.g:
@@ -38,5 +39,6 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   initMCE();
   initLightbox();
+  initSelect2();
 });
 

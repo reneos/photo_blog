@@ -1,5 +1,5 @@
 
-<div class="jumbotron" id="post-page-header" style="background-image: url(<%= cl_image_path @post.photos.first.key %>)">
+<div class="jumbotron" id="post-page-header" <%= "style='background-image: url(#{cl_image_path @post.photos.first.key})')".html_safe if @post.photos.first %>>
   <div class="container">
     <h1><%= @post.title %></h1>
   </div>
@@ -9,9 +9,12 @@
   <div class="row">
      <div class="col">
       <div id="post-page-content">
-        <div class="post-page-meta"><%= @post.created_at %></div>
-        <%= @post.content.html_safe %>
-      </div>
+        <div class="post-page-meta">
+          <%= @post.created_at %>
+          <%= @post.category.name %>
+        </div>
+          <%= @post.content.html_safe %>
+        </div>
     </div>
   </div>
 </div>
