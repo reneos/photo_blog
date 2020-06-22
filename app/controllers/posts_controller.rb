@@ -20,6 +20,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:id])
+    @categories = Category.all
     authorize @post
   end
 
@@ -38,9 +39,15 @@ class PostsController < ApplicationController
   end
 
   def publish(post)
-    post.update(published: true)
-    PolaroidCreator.call(post)
-    redirect_to post_path(post)
+    if params[:post][:category].empty?
+      @categories = Category.all
+      flash[:alert] = "Can't publish with empty category"
+      render :edit
+    else
+      post.update(published: true)
+      PolaroidCreator.call(post)
+      redirect_to post_path(post)
+    end
   end
 
   def create
