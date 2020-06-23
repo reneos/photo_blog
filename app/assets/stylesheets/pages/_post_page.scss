@@ -49,6 +49,8 @@
   font-family: $monospace-font;
 }
 
-@include media-breakpoint-down(md) {
-
+@include media-breakpoint-down(sm) {
+  .post-page-header_with_image:before {
+    background: rgba(0,0,0,.6);
+  }
 }
