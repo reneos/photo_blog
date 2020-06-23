@@ -1,31 +1,34 @@
-<div class="container">
+<div class="container" id="stats-container">
+
   <div class="row pt-5">
     <div class="col-12">
       <h1 class="page-title">Photo Stats</h1>
       <p>For fun, some stats from the photos that have been uploaded to this blog.</p>
     </div>
   </div>
-  <div class="row pt-5">
-  <div class="col-12 col-md-6 mb-5">
-    <h2 class="text-center">By Camera</h2>
-    <%= pie_chart ActiveStorage::Blob.group(:camera).where.not(camera: nil).count %>
-  </div>
-  <div class="col-12 col-md-6 mb-5">
-    <h2 class="text-center">By Lens</h2>
-    <%= pie_chart ActiveStorage::Blob.group(:lens).where.not(lens: nil).count %>
-  </div>
-</div>
 
-<div class="row">
-  <div class="col-12 mb-5">
-    <h2 class="text-center">By Day of the Week</h2>
-    <%= column_chart ActiveStorage::Blob.group_by_day_of_week(:date_taken, format: '%a').count %>
+  <div class="row pt-5">
+    <div class="col-12 col-md-6 mb-5">
+      <h2 class="text-center">By Camera</h2>
+      <%= pie_chart ActiveStorage::Blob.group(:camera).where.not(camera: nil).count %>
+    </div>
+    <div class="col-12 col-md-6 mb-5">
+      <h2 class="text-center">By Lens</h2>
+      <%= pie_chart ActiveStorage::Blob.group(:lens).where.not(lens: nil).count %>
+    </div>
   </div>
-  <div class="col-12 mb-5">
-    <h2 class="text-center">By Month of the Year</h2>
-    <%= column_chart ActiveStorage::Blob.group_by_month(:date_taken, format: '%b').count %>
+
+  <div class="row">
+    <div class="col-12 mb-5">
+      <h2 class="text-center">By Day of the Week</h2>
+      <%= column_chart ActiveStorage::Blob.group_by_day_of_week(:date_taken, format: '%a').count %>
+    </div>
+    <div class="col-12 mb-5">
+      <h2 class="text-center">By Month of the Year</h2>
+      <%= column_chart ActiveStorage::Blob.group_by_month(:date_taken, format: '%b').count %>
+    </div>
   </div>
-</div>
+
 </div>
 
 

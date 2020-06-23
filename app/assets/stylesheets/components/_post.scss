@@ -16,17 +16,20 @@
 
 .post {
   position: relative;
-  // background-color: #d4cdc5;
   margin: 2.5em;
   height: 375px;
+  overflow: hidden;
   &:hover .post-photo-featured {
     width: 100%;
     margin-left: 0;
     height: 100%;
   }
   &:hover .post-date {
-    display: block;
-    transition: 200ms;
+    background-color: $cream;
+    color: $dark-brown;
+    padding: 0 .5em;
+    transition: 250ms;
+    right: 0;
   }
 }
 
@@ -37,8 +40,10 @@
 }
 
 .post-date {
-  display: none;
+  display: inline-block;
   font-family: $monospace-font;
+  position: relative;
+  right: 100%;
 }
 
 .post-meta {
@@ -57,5 +62,8 @@
 @include media-breakpoint-down(md) {
   .post-meta h2 {
     font-size: 3.5rem;
+  }
+  .post {
+    margin: 1em;
   }
 }

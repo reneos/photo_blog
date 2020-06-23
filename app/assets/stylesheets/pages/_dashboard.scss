@@ -1,0 +1,11 @@
+.dashboard-post-list {
+  .list-group-item {
+    background: transparent;
+    padding-left: 0;
+    border: 0;
+    border-bottom: 1px dotted $dark-brown;
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+}
