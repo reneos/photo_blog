@@ -3,40 +3,12 @@
 
     <div class="col-12 col-lg-6 mb-5">
       <h1 class="page-title">Published posts</h1>
-      <ul class="list-group dashboard-post-list">
-        <% @posts.each do |post| %>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <span>
-              <div><%= post.title %></div>
-              <div>
-                <span class="badge badge-pill badge-primary"><%= post.category.name %></span>
-                <span class="badge badge-pill badge-light"><%= post.created_at.strftime("%F") %></span>
-              </div>
-            </span>
-            <span>
-              <%= link_to "Edit", edit_post_path(post), class: "btn btn-primary" %>
-              <%= link_to "View", post_path(post), class: "btn btn-primary" %>
-              <%= link_to "Delete", post_path(post), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"},remote: true  %>
-            </span>
-          </li>
-        <% end %>
-      </ul>
+      <%= render 'post_list', collection: @posts, view: "View" %>
     </div>
 
     <div class="col-12 col-lg-6">
       <h1 class="page-title">Drafts</h1>
-      <ul class="list-group dashboard_post_list">
-        <% @drafts.each do |post| %>
-          <li class="list-group-item d-flex justify-content-between align-items-center">
-            <%= post.title %>
-            <span>
-              <%= link_to "Edit", edit_post_path(post), class: "btn btn-primary" %>
-              <%= link_to "Preview", post_path(post), class: "btn btn-primary" %>
-              <%= link_to "Delete", post_path(post), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"},remote: true  %>
-            </span>
-          </li>
-        <% end %>
-      </ul>
+      <%= render 'post_list', collection: @drafts, view: "Preview" %>
     </div>
 
   </div>

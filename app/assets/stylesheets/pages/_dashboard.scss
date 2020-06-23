@@ -8,4 +8,11 @@
       border-bottom: 0;
     }
   }
+  .badge-primary {
+    background-color: $dark-yellow;
+    color: $dark-brown;
+  }
+  .badge-light {
+    background-color: $light-cream;
+  }
 }
