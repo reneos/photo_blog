@@ -1,5 +1,6 @@
 
-<div class="jumbotron" id="post-page-header" <%= "style='background-image: url(#{cl_image_path @post.photos.first.key})')".html_safe if @post.photos.first %>>
+<% has_photo = @post.photos.any? %>
+<div class="jumbotron<%= ' post-page-header_with_image' if has_photo %>" id="post-page-header" <%= "style='background-image: url(#{cl_image_path @post.photos.first.key})')".html_safe if has_photo %>>
   <div class="container">
     <h1><%= @post.title %></h1>
   </div>
@@ -8,11 +9,12 @@
 <div class="container" id="post-page-container">
   <div class="row">
      <div class="col">
-      <div id="post-page-content">
-        <div class="post-page-meta">
-          <%= @post.created_at %>
-          <%= @post.category.name %>
+      <div>
+        <div class="post-page-meta d-flex justify-content-between">
+          <p>Posted on <span class="emphasize"><%= @post.created_at.strftime("%F") %></span> in <span class="emphasize"><%= @post.category ? @post.category.name : "Uncategorized" %></span>
+          </p>
         </div>
+        <div id="post-page-content">
           <%= @post.content.html_safe %>
         </div>
     </div>

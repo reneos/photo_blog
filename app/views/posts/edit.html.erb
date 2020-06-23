@@ -5,7 +5,7 @@
       <h1>Create Post</h1>
       <%= simple_form_for @post, data: { 'upload_path': upload_image_post_path(@post) } do |f| %>
       <%= f.input :title %>
-      <%= f.association :category, collection: @categories, input_html: { class: 'select2' }, include_blank: false  %>
+      <%= f.association :category, collection: @categories, input_html: { class: 'select2' } %>
       <%= f.input :content, input_html: { class: 'tinymce', rows: 20 } %>
 
       <%= f.submit "Save", class: 'btn btn-primary' %>

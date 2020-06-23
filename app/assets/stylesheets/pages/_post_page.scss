@@ -6,6 +6,7 @@
   align-items: flex-end;
   padding-bottom: 0;
   position: relative;
+  background-color: $light-cream;
   h1 {
     margin-bottom: 0;
     position: absolute;
@@ -16,6 +17,9 @@
     line-height: .70em;
     font-size: 5rem;
   }
+}
+
+.post-page-header_with_image {
   &:before{
     content: "";
     position: absolute;
@@ -43,4 +47,8 @@
 
 .post-page-meta {
   font-family: $monospace-font;
+}
+
+@include media-breakpoint-down(md) {
+
 }

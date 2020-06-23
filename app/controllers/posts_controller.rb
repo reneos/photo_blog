@@ -71,7 +71,7 @@ class PostsController < ApplicationController
     category_name.strip!
     return nil if category_name.empty?
 
-    return Category.where(id: category_name).first || Category.create(name: category_name).id
+    return Category.exists?(category_name) ? category_name : Category.create(name: category_name).id
   end
 
   def set_post
