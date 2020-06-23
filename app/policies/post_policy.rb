@@ -24,4 +24,8 @@ class PostPolicy < ApplicationPolicy
   def upload_image?
     edit?
   end
+
+  def destroy?
+    create?
+  end
 end

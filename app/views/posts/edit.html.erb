@@ -12,6 +12,7 @@
       <% if !@post.published %>
         <%= f.submit "Publish", class: 'btn btn-primary' %>
       <% end %>
+      <%= link_to "Delete", post_path(@post), class: "btn btn-primary", method: :delete, data: {confirm: "Are you sure?"},remote: true  %>
     <% end %>
     </div>
   </div>

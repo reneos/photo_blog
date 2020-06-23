@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :upload_image, :edit, :update]
+  before_action :set_post, only: [:show, :upload_image, :edit, :update, :destroy]
 
   def index
     @posts = policy_scope(Post).published
@@ -52,6 +52,13 @@ class PostsController < ApplicationController
     authorize @post
     @post.save
     redirect_to edit_post_path(@post)
+  end
+
+  def destroy
+    authorize @post
+    @post.destroy
+    flash[:notice] = "Deleted post #{@post.id}, title: #{@post.title}"
+    redirect_to dashboard_index_path
   end
 
   private
