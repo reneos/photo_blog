@@ -1,12 +1,10 @@
 <ul class="list-group">
- <li class="list-group-item">
+  <%= render 'shared/admin_menu' %>
+  <li class="list-group-item">
     <%= link_to "All Posts", posts_path %>
   </li>
   <li class="list-group-item">
     <%= link_to "All Photos", polaroids_path %>
-  </li>
-  <li class="list-group-item">
-    <%= link_to "New Post", posts_path, method: :post %>
   </li>
   <li class="list-group-item">
     <%= link_to "Stats", stats_path %>

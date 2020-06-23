@@ -1,0 +1,35 @@
+<div class="container-fluid py-5">
+  <div class="row">
+
+    <div class="col-12 col-md-6">
+      <h1 class="page-title">Published posts</h1>
+      <ul class="list-group dashboard_post_list">
+        <% @posts.each do |post| %>
+          <li class="list-group-item d-flex justify-content-between">
+            <%= post.title %>
+            <span>
+              <%= link_to "Edit", edit_post_path(post), class: "btn btn-primary" %>
+              <%= link_to "View", post_path(post), class: "btn btn-primary" %>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="col-12 col-md-6">
+      <h1 class="page-title">Drafts</h1>
+      <ul class="list-group dashboard_post_list">
+        <% @drafts.each do |post| %>
+          <li class="list-group-item d-flex justify-content-between">
+            <%= post.title %>
+            <span>
+              <%= link_to "Edit", edit_post_path(post), class: "btn btn-primary" %>
+              <%= link_to "View", post_path(post), class: "btn btn-primary" %>
+            </span>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+
+  </div>
+</div>
