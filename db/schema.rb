@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_06_22_015547) do
+ActiveRecord::Schema.define(version: 2020_06_24_041427) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 2020_06_22_015547) do
     t.boolean "published", default: false
     t.bigint "user_id", null: false
     t.bigint "category_id"
+    t.datetime "post_date"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
