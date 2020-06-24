@@ -4126,6 +4126,11 @@ lines-and-columns@^1.1.6:
   resolved "https://registry.yarnpkg.com/lines-and-columns/-/lines-and-columns-1.1.6.tgz#1c00c743b433cd0a4e80758f7b64a57440d9ff00"
   integrity sha1-HADHQ7QzzQpOgHWPe2SldEDZ/wA=
 
+litepicker@^1.5.5:
+  version "1.5.5"
+  resolved "https://registry.yarnpkg.com/litepicker/-/litepicker-1.5.5.tgz#998d09361eef31ff4f55cc41a39528d6fd0694ae"
+  integrity sha512-tgH8p/WUjWSDvORne1ERkGD2Ik74sBq8Hw+Wu5IfMfJe1ncXga8ZONLXVMGd2UH6tudVh4leoSXAv7VRfycc6Q==
+
 load-json-file@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/load-json-file/-/load-json-file-1.1.0.tgz#956905708d58b4bab4c2261b04f59f31c99374c0"

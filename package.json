@@ -11,6 +11,7 @@
     "chartkick": "^3.2.0",
     "chocolat": "^1.0.2",
     "jquery": "^3.5.1",
+    "litepicker": "^1.5.5",
     "popper.js": "^1.16.1",
     "select2": "^4.0.13",
     "turbolinks": "^5.2.0"

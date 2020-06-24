@@ -40,5 +40,6 @@ document.addEventListener('turbolinks:load', () => {
   initMCE();
   initLightbox();
   initSelect2();
+  initLitepicker();
 });
 
