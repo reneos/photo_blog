@@ -8,24 +8,7 @@
   <% end %>
 
   <div class="row">
-      <% @posts.each do |post| %>
-        <div class="col-12 col-md-6 col-lg-4 mb-2">
-          <div class="post">
-
-            <% if post.photos.any? %>
-              <%= cl_image_tag post.photos.first.key, class:"post-photo-featured" %>
-            <% end %>
-            <div class="post-meta">
-              <h2><%= post.title %></h2>
-              <div class="post-date"><%= post.post_date.strftime('%Y-%m-%d') %></div>
-            </div>
-            <%= link_to "", post_path(post), class: "full-link" %>
-          </div>
-        </div>
-
-
-      <% end %>
-
+      <%= render "post_grid", posts: @posts %>
   </div>
 
 </div>
