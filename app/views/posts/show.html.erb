@@ -11,7 +11,7 @@
      <div class="col">
       <div>
         <div class="post-page-meta d-flex justify-content-between">
-          <p>Posted on <span class="emphasize"><%= @post.created_at.strftime("%F") %></span> in <span class="emphasize"><%= @post.category ? @post.category.name : "Uncategorized" %></span>
+          <p>Posted on <span class="emphasize"><%= @post.post_date.strftime("%F") %></span> in <span class="emphasize"><%= @post.category ? @post.category.name : "Uncategorized" %></span>
           </p>
         </div>
         <div id="post-page-content">
