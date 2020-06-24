@@ -9,4 +9,4 @@ const initLitepicker = () => {
   }
 }
 
-export initLitepicker;
+export { initLitepicker };

@@ -5,6 +5,7 @@
       <h1>Create Post</h1>
       <%= simple_form_for @post, data: { 'upload_path': upload_image_post_path(@post) } do |f| %>
       <%= f.input :title %>
+      <%= f.input :post_date, as: :string, input_html: {class: 'litepicker'} %>
       <%= f.association :category, collection: @categories, input_html: { class: 'select2' } %>
       <%= f.input :content, input_html: { class: 'tinymce', rows: 20 } %>
 

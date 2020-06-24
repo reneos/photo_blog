@@ -29,7 +29,7 @@ import "bootstrap";
 import { initMCE } from '../plugins/init_mce';
 import { initLightbox } from '../plugins/init_lightbox';
 import { initSelect2 } from '../plugins/init_select2';
-
+import { initLitepicker} from '../plugins/init_litepicker';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
