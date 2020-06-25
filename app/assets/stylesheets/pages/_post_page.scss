@@ -19,6 +19,7 @@
   }
 }
 
+
 .post-page-header_with_image {
   &:before{
     content: "";
@@ -43,6 +44,10 @@
 
 #post-page-container {
   max-width: 800px;
+   a {
+    border-bottom: 1px solid $dark-yellow;
+    color: inherit;
+  }
 }
 
 .post-page-meta {
