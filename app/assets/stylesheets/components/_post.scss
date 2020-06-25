@@ -10,6 +10,7 @@
   position: absolute;
   bottom: 0;
   height: 300px;
+  opacity: .8;
 }
 
 
@@ -23,6 +24,7 @@
     width: 100%;
     margin-left: 0;
     height: 100%;
+    opacity: 1;
   }
   &:hover .post-date {
     background-color: $cream;
@@ -54,8 +56,12 @@
   h2 {
     font-size: 4rem;
     font-weight: 500 !important;
-    text-shadow: 2px 1px 0 #c5c5b1;
+    text-shadow: -1px -1px 0 white, 2px 2px 0 $dark-brown, 3px 3px 0 $dark-brown;
     text-transform: lowercase;
+    font-weight: 800 !important;
+    color: $light-yellow;
+    // color: $light-cream;
+    line-height: .8em;
   }
 }
 
