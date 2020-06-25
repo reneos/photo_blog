@@ -3,3 +3,14 @@
   background-size: cover;
   background-position: center center;
 }
+
+.main-title {
+  font-size: 10vw;
+  color: $dark-yellow;
+  font-weight: 800;
+  text-align: left;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 0 $dark-brown, 3px 3px 0 $dark-brown, 4px 4px 0 $dark-brown, 5px 5px 0 $dark-brown, -1px -1px 0 white;
+  margin: .5em;
+  line-height: 8vw;
+}
